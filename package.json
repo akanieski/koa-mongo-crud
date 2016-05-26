@@ -1,0 +1,23 @@
+{
+  "name": "03-koa-mongo-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "seed": "\\mongo\\mongo %MONGO_HOST%:%MONGO_PORT%/%MONGO_DB% -u %MONGO_USER% -p %MONGO_PASSWORD% ./tasks/seedData.mongo.js",
+    "drop": "\\mongo\\mongo %MONGO_HOST%:%MONGO_PORT%/%MONGO_DB% -u %MONGO_USER% -p %MONGO_PASSWORD% ./tasks/dropData.mongo.js",
+    "test": "npm run drop && npm run seed && mocha tests --timeout 100000",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^1.2.0",
+    "koa-bodyparser": "^2.0.1",
+    "koa-router": "^5.4.0",
+    "mongorito": "^2.0.0"
+  },
+  "devDependencies": {
+    "request": "^2.72.0"
+  }
+}
